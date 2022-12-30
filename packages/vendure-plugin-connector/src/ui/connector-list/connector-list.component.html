@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="header">
+    <div class="header-content">
+      <span>Shopping Carts</span>
+    </div>
+  </div>
+  <div class="body">
+    <div class="list-channel" *ngFor="let connector of connectorsList">
+      <div class="item-channel">
+        <div class="information">
+          <img src="{{ connector.icon }}" alt="" />
+          <p class="title">
+            {{ connector.name }}
+          </p>
+          <p class="description">
+            {{ connector.description }}
+          </p>
+        </div>
+        <div class="action">
+          <button
+            (click)="btnRedirect(connector.type)"
+            *ngIf="
+              !connectorsConnected.includes(connector.type) &&
+              !connectorsReconnected.includes(connector.type)
+            "
+          >
+            Connect
+          </button>
+          <button
+            *ngIf="connectorsConnected.includes(connector.type)"
+            class="button--connected"
+          >
+            Connected
+          </button>
+          <button
+            (click)="reConnect(connector.type)"
+            *ngIf="connectorsReconnected.includes(connector.type)"
+            class="button--reConnected"
+          >
+            Re-Connect
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

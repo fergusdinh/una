@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["dom", "es2019"]
+  },
+  "include": [
+    "src/",
+    "../vendure-plugin-custom-field-ui/src/ui/country-select",
+    "../vendure-plugin-custom-field-ui/src/ui/country-select.module.ts"
+  ],
+  "exclude": ["src/ui"]
+}

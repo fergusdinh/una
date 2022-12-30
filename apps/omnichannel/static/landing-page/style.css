@@ -1,0 +1,124 @@
+body {
+    color: #343a40;
+    font-family: 'Open Sans', sans-serif;
+    min-height: 94vh;
+    background-color: #8EC5FC;
+    background-image: linear-gradient(134deg, #e8f3ff 0%, #c3f1fc 100%)
+
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+h1 {
+    color: #13b7f3;
+    font-size: 4em;
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+.header {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.logo {
+    width: 65px;
+    height: 100%;
+    margin-right: 36px;
+}
+
+p.lead {
+    font-size: 18px;
+    color: #333;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    box-shadow: 0 3px 12px -2px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    background-color: #f0f7f9d9;
+    flex: 1;
+    margin: 12px;
+    color: #095970;
+}
+
+.card-header {
+    border-bottom: 1px dashed #ccc;
+}
+
+.card-header h2 {
+    margin: 12px;
+    display: flex;
+    align-items: center;
+}
+.card-header h2 img {
+    max-width: 50px;
+    margin-right: 12px;
+}
+.card-body {
+    padding: 12px;
+}
+.card-body ul {
+    list-style-type: none;
+    padding: 0;
+}
+.card-button {
+    padding: 6px 12px 24px;
+    text-align: center;
+}
+
+.card-button a {
+    background-color: #13b7f3;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.card-button a:hover {
+    background-color: #40a2de;
+}
+.card-button a:focus {
+    outline: 2px solid orange;
+    background-color: #40a2de;
+}
+
+.card-button-secondary {
+    text-align: center;
+}
+.card-button-secondary a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #40a2de;
+}
+
+@media all and (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    .logo {
+        margin-right: 0;
+    }
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cards {
+        flex-direction: column;
+    }
+}

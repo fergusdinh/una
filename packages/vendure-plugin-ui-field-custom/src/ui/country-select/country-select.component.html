@@ -1,0 +1,6 @@
+<select [formControl]="formControl" required>
+  <option [ngValue]="undefined" disabled selected>Select a country</option>
+  <option *ngFor="let item of countries" [ngValue]="item.code">
+    {{ item.name }}
+  </option>
+</select>

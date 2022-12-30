@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  # web:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   environment:
+  #     - NODE_ENV=dev
+  #   ports:
+  #     - 3000:3000
+  #   volumes:
+  #     - .:/home/node/app/
+  action:
+    build:
+      context: .
+      dockerfile: Dockerfile.action
+    working_dir: /home/node/app/
+    environment:
+      - INPUT_SERVER=https://captain.bavaan.cloud/
+      - INPUT_PASSWORD=BotBot@123
+      - INPUT_BRANCH=master
+      - INPUT_APPNAME=bavaan-omnichannel-platform
+    volumes:
+      - .:/home/node/app/

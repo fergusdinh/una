@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["es2017"]
+  },
+  "include": ["src/"],
+  "exclude": ["src/ui"]
+}

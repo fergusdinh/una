@@ -1,0 +1,47 @@
+<div class="clr-row">
+  <div class="clr-col">
+    <form class="form" [formGroup]="connectorForm">
+      <section class="form-block">
+        <p class="title">Connect a new Channel</p>
+        <div class="action-back">
+          <cds-icon shape="arrow"></cds-icon>
+          <a [routerLink]="['..']">Back</a>
+        </div>
+
+        <div class="form-data">
+          <p class="title">
+            Connecting your <span>{{ connectorType }}</span> account is easy!
+          </p>
+
+          <json-editor-form-input
+            [connectorForm]="connectorForm"
+            dataMapping="{{ dataMapping }}"
+            connectorConfigUi="{{ connectorConfigUi }}"
+            [entities]="entities"
+          >
+          </json-editor-form-input>
+
+          <div class="sign-up">
+            <span *ngIf="link"
+              >Don't have a
+              <span class="type-name">{{ connectorType }}</span> store?
+              <a href="{{ link }}" target="_blank">Click here </a>to create
+              one.</span
+            >
+          </div>
+        </div>
+
+        <div class="policy">
+          <p>
+            All your data is protected under our
+            <a href="#">Data Security Policy</a>
+          </p>
+          <p>
+            You have the option to close your account and delete all your
+            e-commerce data stored on Bavaan anytime.
+          </p>
+        </div>
+      </section>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div class="wrapper">
+  <div class="more-filter__container">
+    <div class="more-filter__action">
+      <cds-icon shape="window-close" (click)="closeMoreFilter()"></cds-icon>
+    </div>
+
+    <div class="more-filter__form-filter">
+      <form action="">
+        <div class="more-filter__list-filter">
+          <div class="more-filter__list-filter--element">
+            <nav class="sidenav">
+              <section class="nav-group collapsible">
+                <input id="price" type="checkbox" />
+                <label for="price">Price</label>
+
+                <div class="more-filter__list-filter--group-input nav-list">
+                  <input type="text" placeholder="From" />
+                  <input type="text" placeholder="To" />
+                </div>
+              </section>
+            </nav>
+          </div>
+
+          <div class="more-filter__list-filter--element">
+            <nav class="sidenav">
+              <section class="nav-group collapsible">
+                <input id="quantity" type="checkbox" />
+                <label for="quantity">Quantity</label>
+
+                <div class="more-filter__list-filter--group-input nav-list">
+                  <input type="text" placeholder="From" />
+                  <input type="text" placeholder="To" />
+                </div>
+              </section>
+            </nav>
+          </div>
+        </div>
+        <div class="more-filter__form-filter--apply">
+          <button>apply filter</button>
+          <button>clear more filter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+  class="more-filter__bg"
+  *ngIf="isShow"
+  aria-hidden="true"
+  (click)="closeMoreFilter()"
+></div>

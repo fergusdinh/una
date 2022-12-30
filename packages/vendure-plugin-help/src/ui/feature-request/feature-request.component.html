@@ -1,0 +1,28 @@
+<div class="feature-request__container">
+  <div class="feature-request__header">
+    <p>
+      Do you need some Features or new Sales Channels but they are not yet in
+      available in our tool? Let us know here, we are always ready to listen and
+      improve our product to serve you better.
+    </p>
+  </div>
+  <div class="feature-request__content">
+    <form
+      class="form"
+      [formGroup]="featureDescriptionForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <div class="form-label">
+        <p>Feature Description</p>
+      </div>
+      <div class="form-action">
+        <vdr-rich-text-editor
+          formControlName="description"
+          [readonly]="!(['UpdateCatalog', 'UpdateProduct'] | hasPermission)"
+        >
+        </vdr-rich-text-editor>
+        <button type="submit">Submit my request</button>
+      </div>
+    </form>
+  </div>
+</div>

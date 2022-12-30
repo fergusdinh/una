@@ -1,0 +1,11 @@
+.idea
+node_modules
+static/assets
+static/import-assets
+static/email/output
+vendure.sqlite*
+yarn-error.log
+data-cache
+dist
+storefront.zip
+/build/

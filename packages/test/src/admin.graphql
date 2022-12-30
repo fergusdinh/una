@@ -1,0 +1,49 @@
+mutation CreateShippingMethod($input: CreateShippingMethodInput!) {
+  createShippingMethod(input: $input) {
+    id
+  }
+}
+
+mutation CreateFulfillment($input: FulfillOrderInput!) {
+  addFulfillmentToOrder(input: $input) {
+    ... on Fulfillment {
+      id
+      state
+      method
+    }
+  }
+}
+
+mutation CreateFulfillment($input: FulfillOrderInput!) {
+  addFulfillmentToOrder(input: $input) {
+    ... on Fulfillment {
+      id
+      state
+      method
+    }
+  }
+}
+
+query order($id: ID!) {
+  order(id: $id) {
+    id
+    code
+    state
+    totalWithTax
+    fulfillments {
+      id
+      state
+      method
+    }
+  }
+}
+
+mutation createPaymentMethod($input: CreatePaymentMethodInput!) {
+  createPaymentMethod(input: $input) {
+    id
+    code
+    name
+    description
+    enabled
+  }
+}

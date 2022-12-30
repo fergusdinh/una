@@ -1,0 +1,46 @@
+{
+  "name": "@bavaan/vendure-plugin-help",
+  "version": "0.0.1",
+  "description": "Call connectors on configured events from Vendure",
+  "author": "Hiep Tran <hieptran@bavaan.com>",
+  "homepage": "https://bavaan.com",
+  "repository": "https://github.com/bavaan-platform/bavaan-commerce-app-platform",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc && copyfiles -u 1 'src/ui/**/*' dist/",
+    "start": "yarn ts-node test/dev-server.ts",
+    "test": "jest --config ../test/src/jest-config.js --runInBand --detectOpenHandles --forceExit --package=vendure-plugin-help"
+  },
+  "config": {
+    "vendure": "1.9.1"
+  },
+  "devDependencies": {
+    "@ajsf/core": "0.7.0",
+    "@types/jest": "^27.4.1",
+    "@types/node": "~10.12.0",
+    "@vendure/admin-ui-plugin": "1.9.1",
+    "@vendure/common": "1.9.1",
+    "@vendure/core": "1.9.1",
+    "@vendure/testing": "1.9.1",
+    "@vendure/ui-devkit": "1.9.1",
+    "copyfiles": "^2.4.1",
+    "graphql": "^16.6.0",
+    "graphql-request": "^5.0.0",
+    "jest": "^27.5.1",
+    "nock": "^13.2.9",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0",
+    "typescript": "4.3.5"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0"
+  }
+}

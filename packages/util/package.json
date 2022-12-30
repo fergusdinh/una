@@ -1,0 +1,11 @@
+{
+  "name": "@bavaan/vendure-utils",
+  "version": "3.7.0",
+  "main": "index.ts",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@vendure/common": "1.9.1",
+    "@vendure/core": "1.9.1"
+  }
+}

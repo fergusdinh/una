@@ -1,0 +1,68 @@
+{
+  "name": "bavaan-vendure-plugins",
+  "private": true,
+  "keywords": [
+    "vendure",
+    "vendure-plugins",
+    "vendure-packges"
+  ],
+  "scripts": {
+    "postinstall": "yarn husky install",
+    "dev": "yarn workspace @bavaan/shopify-app-omnichannel run dev",
+    "build": "yarn && yarn prettier:write && yarn lerna exec yarn && yarn lerna run build",
+    "start": "yarn workspace @bavaan/shopify-app-omnichannel run start",
+    "demo": "yarn workspace @bavaan/omnichannel run start",
+    "postinstall-patch-package": "patch-package",
+    "test": "yarn lerna run test",
+    "test:ci": "yarn lerna run test --ci",
+    "bootstrap": "yarn && yarn lerna bootstrap",
+    "lerna:publish": "yarn && yarn lerna exec yarn && yarn lerna run build && yarn lerna publish --conventional-commits",
+    "prettier:write": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "upgrade:vendure": "yarn lerna exec \"yarn upgrade --pattern @vendure --latest\"",
+    "nuke": "rm -rf node_modules; for d in packages/*/node_modules; do echo $d; rm -rf $d; done; for d in packages/*/dist; do echo $d; rm -rf $d; done; for d in packages/*/dist; do echo $d; rm -rf $d; done; for d in packages/*/package-lock.json; do echo $d; rm -rf $d; done; for d in packages/*/yarn.lock; do echo $d; rm -rf $d; done;for d in packages/*/__data__; do echo $d; rm -rf $d; done;for d in packages/*/test/e2e/__admin-ui; do echo $d; rm -rf $d; done;for d in packages/*/test/e2e/database.sqlite; do echo $d; rm -rf $d; done;"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "@types/node": "^18.11.0",
+    "husky": "^7.0.4",
+    "lerna": "^6.1.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.5.1",
+    "patch-package": "^6.5.0",
+    "postinstall-postinstall": "^2.1.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "apps/*"
+    ]
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "scope-enum": [
+        2,
+        "always",
+        [
+          "coinbase",
+          "dutch-postalcode",
+          "e-boekhouden",
+          "goedgepickt",
+          "google-cloud-tasks",
+          "google-storage-assets",
+          "invoices",
+          "myparcel",
+          "webhook",
+          "admin-ui-helpers",
+          "order-export",
+          "all-plugins"
+        ]
+      ]
+    }
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="filter-advanced__container">
+    <div class="filter-advanced__action">
+      <cds-icon shape="window-close" (click)="closeMoreFilter()"></cds-icon>
+    </div>
+
+    <div class="filter-advanced__form-filter">
+      <form [formGroup]="filterForm" (ngSubmit)="onSubmit()">
+        <div class="filter-advanced__list-filter">
+          <div
+            class="filter-advanced__list-filter--element"
+            *ngFor="let item of dataFilters"
+          >
+            <nav class="sidenav">
+              <section class="nav-group collapsible">
+                <input id="price" type="checkbox" />
+                <label for="price">{{ item.name }}</label>
+
+                <div
+                  class="filter-advanced__list-filter--group-input nav-list"
+                  formGroupName="{{ item.code }}"
+                >
+                  <input
+                    type="number"
+                    placeholder="From"
+                    formControlName="start"
+                  />
+                  <input type="number" placeholder="To" formControlName="end" />
+                </div>
+              </section>
+            </nav>
+          </div>
+        </div>
+        <div class="filter-advanced__form-filter--apply">
+          <button type="submit">apply filter</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+  class="filter-advanced__bg"
+  *ngIf="isShow"
+  aria-hidden="true"
+  (click)="closeMoreFilter()"
+></div>

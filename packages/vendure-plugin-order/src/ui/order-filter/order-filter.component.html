@@ -1,0 +1,40 @@
+<div class="order-filter">
+  <div class="order-filter--action">
+    <button class="btn btn-primary" (click)="showFilters()">
+      <cds-icon shape="filter"></cds-icon>
+      Filter
+    </button>
+    <!-- <button class="btn btn-outline" *ngIf="dataFilters" (click)="removeSelectedSort()">
+            Filter between: {{ dataFilters }}
+            <cds-icon shape="times"></cds-icon>
+        </button> -->
+  </div>
+  <clr-dropdown>
+    <button class="dropdown-toggle btn btn-primary" clrDropdownTrigger>
+      <cds-icon shape="sort-by"></cds-icon>
+      Sort
+    </button>
+    <clr-dropdown-menu *clrIfOpen>
+      <label class="dropdown-header" aria-hidden="true">Sort by</label>
+      <div
+        aria-label="Dropdown header Action 1"
+        clrDropdownItem
+        *ngFor="let item of dataSelectSorting"
+        (click)="setItem(item)"
+      >
+        {{ item.value }}
+      </div>
+      <!-- <div class="dropdown-divider" role="separator" aria-hidden="true"></div> -->
+    </clr-dropdown-menu>
+  </clr-dropdown>
+  <button
+    class="btn btn-outline"
+    *ngIf="isSelectedValue"
+    (click)="removeSelectedSort()"
+  >
+    Sort: {{ isSelectedValue }}
+    <cds-icon shape="times"></cds-icon>
+  </button>
+
+  <button class="btn btn-outline" (click)="removeSelectedSort()">Clear</button>
+</div>

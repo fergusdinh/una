@@ -1,0 +1,25 @@
+<!-- <div>
+    <form [formGroup]="formMetaData">
+        <textarea cols="64" rows="10" autofocus [formControl]="formControl" [ngModel]="data" (ngModelChange)="doSomething($event)">
+            {{ formControl.value }}
+        </textarea>
+    </form>
+</div> -->
+<!-- <div>
+    <json-editor-form-input-product
+        [formControl]="formControl"
+        (messageJsonDataEvent)="receiveJsonDataMessage($event)"
+    ></json-editor-form-input-product>
+</div> -->
+
+<json-schema-form
+  #jsonSchemaFormComponent
+  loadExternalAssets="true"
+  [form]="jsonFormObject"
+  framework="no-framework"
+  [formControl]="formControl"
+  [options]="formOptions"
+  (onSubmit)="onSubmitFn($event)"
+></json-schema-form>
+
+<button class="btn btn-primary btn-sm" (click)="submitCustom()">Save</button>

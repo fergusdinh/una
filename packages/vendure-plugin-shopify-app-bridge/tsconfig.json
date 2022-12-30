@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "dist",
+    "lib": ["es2019", "esnext.asynciterable", "DOM"]
+  },
+  "include": ["src/"],
+  "exclude": ["src/ui"]
+}

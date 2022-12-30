@@ -1,0 +1,46 @@
+.form-block {
+  .title {
+    color: black;
+    font-weight: bold;
+    font-size: 21px;
+    margin-top: 0;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  .action-back {
+    display: flex;
+    align-items: center;
+    color: #0072a3;
+    margin-top: 5px;
+
+    cds-icon {
+      rotate: 270deg;
+    }
+  }
+
+  .form-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    background-color: white;
+    margin-top: 15px;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 5px;
+  }
+
+  .type-name {
+    text-transform: capitalize;
+  }
+
+  .policy {
+    margin-top: 15px;
+
+    p {
+      margin-top: 0;
+    }
+  }
+}

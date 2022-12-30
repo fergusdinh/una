@@ -1,0 +1,40 @@
+{
+  "name": "@bavaan/vendure-plugin-ui-field-custom",
+  "version": "3.8.1",
+  "description": "Saas Feature For Vendure",
+  "author": "Dev Team <dev@bavaan.com>",
+  "homepage": "https://bavaan.com",
+  "repository": "https://github.com/bavaan-platform/bavaan-vendure-plugins",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf dist && tsc && copyfiles -u 1 'src/ui/**/*' dist/",
+    "start": "yarn ts-node test/dev-server.ts",
+    "test": "jest --config ../test/src/jest-config.js --runInBand --detectOpenHandles --forceExit --package=vendure-plugin-ui-field-custom"
+  },
+  "config": {
+    "vendure": "1.9.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@types/uuid": "^8.3.4",
+    "@vendure/admin-ui-plugin": "1.9.1",
+    "@vendure/core": "1.9.1",
+    "@vendure/testing": "1.9.1",
+    "@vendure/ui-devkit": "1.9.1",
+    "copyfiles": "^2.4.1",
+    "jest": "^27.5.1",
+    "nock": "^13.2.9",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^27.1.3",
+    "ts-node": "^10.7.0",
+    "typescript": "4.3.5"
+  },
+  "gitHead": "1c835bf53f8d259221a24ebac3a2238bb2c89144"
+}
